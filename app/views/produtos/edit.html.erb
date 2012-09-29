@@ -1,0 +1,16 @@
+<h1>Editando produto</h1>
+<% if @produto.errors.any? %>
+	<ul>
+		<% @produto.errors.full_messages.each do |msg| %>
+		<li><%= msg %></li>
+		<% end %>
+	</ul>
+<% end %>
+
+<%= form_for :produto, url: {action: 'update', id: @produto} do |f| %>
+	Nome: <%= f.text_field :nome %><br/>
+	Descricao: <%= f.text_field :descricao %><br/>
+	Preco: <%= f.text_field :preco %><br/>
+	<%= submit_tag 'Atualizar' %>
+<% end %>
+<%= link_to 'Voltar', {action: 'index'	} %>

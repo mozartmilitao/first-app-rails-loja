@@ -1,0 +1,15 @@
+<p>Clientes > Novo</p>
+<% if @cliente.errors.any? %>
+	<ul>
+		<% @cliente.errors.full_messages.each do |msg| %>
+		<li><%= msg %></li>
+		<% end %>
+	</ul>
+<% end %>
+
+<%= form_for :cliente, url: {action: 'create'} do |f| %>
+	Nome: <%= f.text_field :nome %><br/>
+	Descricao: <%= f.text_field :email %><br/>
+	<%= submit_tag 'Salvar' %>
+<% end %>
+<%= link_to 'Voltar', {action: 'index'	} %>

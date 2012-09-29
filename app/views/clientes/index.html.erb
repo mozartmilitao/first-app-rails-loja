@@ -1,0 +1,21 @@
+<p>Clientes</p>
+<table class="table table-bordered">
+	<tr>
+		<th>Nome </th>
+		<th>Email </th>
+		<th> </th>
+		<th> </th>
+		<th> </th>
+	</tr>
+	<% for cliente in @clientes %>
+	<tr>
+		<td><%= cliente.nome %></td>
+		<td><%= cliente.email %></td>	
+		<td><%= link_to 'Mostrar', {:action => 'show', :id => cliente} %></td>
+		<td><%= link_to 'Editar', {:action => 'edit', :id => cliente} %></td>
+		<td><%= link_to 'Excluir', {:action => 'destroy', :id => cliente} %></td>
+	</tr>
+	<% end %>
+	<br/>
+</table>
+<%= link_to 'Novo', action: 'new' %>

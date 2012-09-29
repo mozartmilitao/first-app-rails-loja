@@ -1,0 +1,17 @@
+<h1>Exibindo o produto</h1>
+
+<p>
+	<b>Nome: </b>
+	<%= @produto.nome %>
+</p>
+<p>
+	<b>Descricao: </b>
+	<%= @produto.descricao %>
+</p>
+<p>
+	<b>Preco: </b>
+	<%= @produto.preco %>
+</p>
+
+<%= link_to 'Editar', { :action => 'edit', :id => @produto }%>
+<%= link_to 'Voltar', { :action => 'index' }%>

@@ -1,0 +1,13 @@
+<p>Cliente > Mostrar</p>
+
+<p>
+	<b>Nome: </b>
+	<%= @cliente.nome %>
+</p>
+<p>
+	<b>Email: </b>
+	<%= @cliente.email %>
+</p>
+
+<%= link_to 'Editar', { :action => 'edit', :id => @cliente }%>
+<%= link_to 'Voltar', { :action => 'index' }%>

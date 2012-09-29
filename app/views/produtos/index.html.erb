@@ -1,0 +1,23 @@
+<p>Produtos</p>
+<table class="table table-bordered">
+	<tr>
+		<th>Nome </th>
+		<th>Endereco </th>
+		<th>Preco </th>
+		<th> </th>
+		<th> </th>
+ </th>
+	</tr>
+	<% for produto in @produtos %>
+	<tr>
+		<td><%= produto.nome %></td>
+		<td><%= produto.descricao %></td>
+		<td><%= produto.preco %></td>		
+		<td><%= link_to 'Mostrar', {:action => 'show', :id => produto} %></td>
+		<td><%= link_to 'Editar', {:action => 'edit', :id => produto} %></td>
+		<td><%= link_to 'Excluir', {:action => 'destroy', :id => produto} %></td>
+	</tr>
+	<% end %>
+	<br/>
+</table>
+<%= link_to 'Novo', action: 'new' %>
